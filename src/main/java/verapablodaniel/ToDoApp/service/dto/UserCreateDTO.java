@@ -2,11 +2,10 @@ package verapablodaniel.ToDoApp.service.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
-public class CourtCreateDTO {
+public class UserCreateDTO {
 
     @NotBlank(message = "name is required")
     private String name;
-    private String location;
 
     public String getName() {
         return name;
@@ -14,14 +13,6 @@ public class CourtCreateDTO {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 }
 

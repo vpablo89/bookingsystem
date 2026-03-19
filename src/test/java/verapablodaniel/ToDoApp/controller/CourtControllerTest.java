@@ -9,7 +9,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import verapablodaniel.ToDoApp.persistence.entities.Court;
-import verapablodaniel.ToDoApp.service.CourtService;
+import verapablodaniel.ToDoApp.service.ports.CourtServicePort;
 import verapablodaniel.ToDoApp.service.dto.CourtCreateDTO;
 
 import java.util.List;
@@ -36,7 +36,7 @@ public class CourtControllerTest {
     private ObjectMapper objectMapper;
 
     @MockBean
-    private CourtService courtService;
+    private CourtServicePort courtService;
 
     @Test
     void createCourt_returnsCreatedCourt() throws Exception {

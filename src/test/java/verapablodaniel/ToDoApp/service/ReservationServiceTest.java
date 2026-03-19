@@ -6,7 +6,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.Mockito;
-import verapablodaniel.ToDoApp.exceptions.NotFoundException;
+import verapablodaniel.ToDoApp.exceptions.service.UserNotFoundException;
 import verapablodaniel.ToDoApp.persistence.entities.Court;
 import verapablodaniel.ToDoApp.persistence.entities.Reservation;
 import verapablodaniel.ToDoApp.persistence.entities.User;
@@ -80,7 +80,7 @@ public class ReservationServiceTest {
 
         Mockito.when(userRepository.findById(999L)).thenReturn(Optional.empty());
 
-        assertThrows(NotFoundException.class, () -> reservationService.createReservation(dto));
+        assertThrows(UserNotFoundException.class, () -> reservationService.createReservation(dto));
         Mockito.verify(reservationRepository, Mockito.never()).save(Mockito.any());
     }
 }
